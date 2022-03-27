@@ -298,11 +298,20 @@ function bodyScrollingToggle() {
 
 /*----------------------------  hide all sections except active  ---------------------------------*/
 
-(() => {
-    const section = document.querySelectorAll(".section");
-    section.forEach((section) => {
-        if (!section.classList.contains("active")) {
-            section.classList.add("hide");
-        }
-    })
-})();
+// (() => {
+//     const section = document.querySelectorAll(".section");
+//     section.forEach((section) => {
+//         if (!section.classList.contains("active")) {
+//             section.classList.add("hide");
+//         }
+//     })
+// })();
+
+
+/*----------------------------  preloader  ---------------------------------*/
+window.addEventListener("load", () => {
+    document.querySelector(".preloader").classList.add("fade-out");
+    setTimeout(() => {
+        document.querySelector(".preloader").style.display = "none";
+    }, 600)
+})
