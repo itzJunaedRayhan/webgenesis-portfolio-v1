@@ -1,22 +1,29 @@
 
-/*----------------------------      About Section Tab       -------------------------------*/
+/*----------------------------      Home Section Tab       -------------------------------*/
 (() => {
     const hamburgerBtn = document.querySelector(".hamburger-btn"),
     navMenu = document.querySelector(".nav-menu"),
     closeNavBtn = navMenu.querySelector(".close-nav-menu"),
     fadeOut = document.querySelector(".fade-out-effect");
 
+    //  Show and Hide Navigation by on click:
     hamburgerBtn.addEventListener("click", showNavMenu);
     closeNavBtn.addEventListener("click", hideNavMenu)
+
+    //  Function to Show Nav Menu:
     function showNavMenu () {
         navMenu.classList.toggle("open");
         bodyScrollingToggle();
     }
+
+    //  Function to Hide Nav Menu:
     function hideNavMenu () {
         navMenu.classList.remove("open");
         fadeOutEffect();
         bodyScrollingToggle();
     }
+
+    //  Function For Fade Out Effect:
     function fadeOutEffect () {
         fadeOut.classList.add("active");
         setTimeout(() => {
@@ -70,6 +77,9 @@
 
 
 
+
+
+
 /*----------------------------      About Section Tab       -------------------------------*/
 (() =>{
     const aboutSection = document.querySelector(".about-section"),
@@ -94,9 +104,16 @@
     })
 })();
 
+
+//  Function for body scrolling Toggle:
 function bodyScrollingToggle() {
     document.body.classList.toggle("hidden-scrolling")
 }
+
+
+
+
+
 
 /*----------------------------      Portfolio filter and Popup       -------------------------------*/
 (() => {
@@ -116,6 +133,7 @@ function bodyScrollingToggle() {
         if(event.target.classList.contains("filter-item") && !event.target.classList.contains("active")){
             //  deactivate existing active 'filter-item'
             filterContainer.querySelector(".active").classList.remove("outer-shadow", "active");
+            
             //  activate new 'filter-item'
             event.target.classList.add("active", "outer-shadow");
             const target = event.target.getAttribute("data-target");
@@ -132,7 +150,7 @@ function bodyScrollingToggle() {
         }
     })
 
-
+    //  for Portfolio Items Container:
     portfolioItemsContainer.addEventListener("click", (event) => {
         if(event.target.closest(".portfolio-item-inner")){
             const portfolioItem = event.target.closest(".portfolio-item-inner").parentElement;
@@ -155,6 +173,7 @@ function bodyScrollingToggle() {
         }
     })
 
+    //  Close Button Handler:
     closeBtn.addEventListener("click", () =>{
         popupToggle();
         if(projectDetailsContainer.classList.contains("active")){
@@ -162,11 +181,13 @@ function bodyScrollingToggle() {
         }
     })
 
+    //  Popup Function:
     function popupToggle() {
         popup.classList.toggle("open");
         bodyScrollingToggle();
     }
 
+    //  popup slideshow Function:
     function popupSlideshow() {
         const imgSrc = screenshots[slideIndex];
         const popupImg = popup.querySelector(".pp-img");
@@ -200,6 +221,8 @@ function bodyScrollingToggle() {
         popupSlideshow();
     })
 
+
+    //  Function For Popup Details:
     function popupDetails(){
         //  get the project details
         const details = portfolioItems[itemIndex].querySelector(".portfolio-item-details").innerHTML;
@@ -227,6 +250,7 @@ function bodyScrollingToggle() {
         popupDetailsToggle();
     })
     
+    //  Function For Popup Details Toggle:
     function popupDetailsToggle(){
         if(projectDetailsContainer.classList.contains("active")){
             projectDetailsContainer.classList.remove("active");
@@ -248,8 +272,8 @@ function bodyScrollingToggle() {
 
 
 
-/*----------------------------      Testimonial Section       -------------------------------*/
 
+/*----------------------------      Testimonial Section       -------------------------------*/
 (() => {
     const sliderContainer =  document.querySelector(".testi-slider-container"),
     slides = sliderContainer.querySelectorAll(".testi-item"),
@@ -263,9 +287,11 @@ function bodyScrollingToggle() {
     slides.forEach((slide) => {
         slide.style.width = slideWidth + "px";
     })
+
     //  set width of sliderContainer
     sliderContainer.style.width = slideWidth * slides.length + "px";
     
+    //  Next Button Implementation:
     nextBtn.addEventListener("click", () => {
         if(slideIndex === slides.length - 1){
             slideIndex = 0;
@@ -275,6 +301,7 @@ function bodyScrollingToggle() {
         slider();
     })
 
+    //  Prev Button Implementation:
     prevBtn.addEventListener("click", () => {
         if(slideIndex === 0) {
             slideIndex = slides.length - 1;
@@ -284,6 +311,7 @@ function bodyScrollingToggle() {
         slider();
     })
 
+    //  Slider Implementation:
     function slider(){
         //  deactivate existing active slides
         sliderContainer.querySelector(".testi-item.active").classList.remove("active");
@@ -296,19 +324,24 @@ function bodyScrollingToggle() {
 })();
 
 
+
+
+
+
 /*----------------------------  hide all sections except active  ---------------------------------*/
+(() => {
+    const section = document.querySelectorAll(".section");
+    section.forEach((section) => {
+        if (!section.classList.contains("active")) {
+            section.classList.add("hide");
+        }
+    })
+})();
 
-// (() => {
-//     const section = document.querySelectorAll(".section");
-//     section.forEach((section) => {
-//         if (!section.classList.contains("active")) {
-//             section.classList.add("hide");
-//         }
-//     })
-// })();
 
 
-/*----------------------------  preloader  ---------------------------------*/
+
+/*------------------------------------------  PreLoader  ----------------------------------------*/
 window.addEventListener("load", () => {
     document.querySelector(".preloader").classList.add("fade-out");
     setTimeout(() => {

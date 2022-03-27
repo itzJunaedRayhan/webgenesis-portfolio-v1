@@ -1028,6 +1028,9 @@ img{
 }
 
 
+
+
+
 /*==============================      Portfolio Popup     ============================== */
 .portfolio-popup{
     background-color: var(--bg-black-50);
@@ -1289,6 +1292,7 @@ img{
 
 
 
+
 /*==============================      Testimonial Section     ============================== */
 .testimonial-section{
     padding: 80px 0 80px;
@@ -1382,7 +1386,6 @@ img{
 .testimonial-section .testi-slider-nav span i{
     line-height: 40px;
 }
-
 
 
 

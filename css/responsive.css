@@ -1,3 +1,4 @@
+/***********************************         Responsive The Designs      *****************************/
 @media only screen and (max-width: 991px) {
     .portfolio-section .portfolio-item,
     .service-section .service-item {
@@ -5,6 +6,9 @@
         max-width: 50%;
     }
 }
+
+
+
 
 @media only screen and (max-width: 767px) {
     .about-section .about-info,
@@ -93,6 +97,9 @@
     }
 }
 
+
+
+
 @media only screen and (max-width: 574px) {
     .home-section .home-img .img-box {
         max-width: 260px;
@@ -117,6 +124,8 @@
         margin-left: 10px;
     }
 }
+
+
 
 
 @media only screen and (max-width: 450px) {
