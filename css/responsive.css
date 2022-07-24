@@ -123,6 +123,12 @@
     .testimonial-section .testi-box {
         margin-left: 10px;
     }
+
+    .style-switcher .style-switcher-toggler,
+    .style-switcher .day-night,
+    .hamburger-btn {
+        background-color: var(--bg-black-50);
+    }
 }
 
 
