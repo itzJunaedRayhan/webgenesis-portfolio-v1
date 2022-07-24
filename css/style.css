@@ -290,6 +290,14 @@ img{
     z-index: 99;
 }
 
+.header .container {
+    max-width: 1510px;
+}
+
+.header .logo{
+    margin-left: 3%;
+}
+
 .header .logo a{
     display: inline-block;
     text-align: center;
@@ -305,6 +313,8 @@ img{
 }
 
 .header .hamburger-btn {
+    position: fixed;
+    right: 15px;
     height: 40px;
     width: 40px;
     display: flex;
@@ -560,20 +570,21 @@ img{
 .home-section .home-img .img-box img{
     width: 100%;
     border-radius: 50%;
-    border: 10px solid transparent;
+    /* border: 10px solid transparent; */
+    background: rgba(220, 218, 29, 0.7);
 }
 
 
 
 /*==============================      About Us Section     ============================== */
 .about-section{
-    padding: 80px 0px 0px;
+    padding: 60px 0px 0px;
     min-height: 100vh;
 }
 
 .about-section .about-img{
     flex: 0 0 40%;
-    max-width: 40%;
+    max-width: 38%;
     padding: 0 15px;
 }
 
@@ -587,12 +598,12 @@ img{
     border-radius: 5px;
 }
 
-.about-section .about-img .social-links{
+.about-section .social-links{
     margin-top: 20px;
-    text-align: center;
+    text-align: left;
 }
 
-.about-section .about-img .social-links a{
+.about-section .social-links a{
     display: inline-block;
     height: 40px;
     width: 40px;
@@ -604,15 +615,15 @@ img{
     transition: all 0.3s ease;
 }
 
-.about-section .about-img .social-links a i{
+.about-section .social-links a i{
     line-height: 40px;
 }
 
-.about-section .about-img .social-links a::after{
+.about-section .social-links a::after{
     border-radius: 50%;
 }
 
-.about-section .about-img .social-links a:hover{
+.about-section .social-links a:hover{
     color: var(--skin-color);
 }
 
@@ -677,14 +688,14 @@ img{
 }
 
 .about-section .skills{
-    padding: 0 0 40px;
+    padding: 100px 0 40px 0px;
 }
 
 .about-section .skills .skill-item{
     flex: 0 0 50%;
     max-width: 50%;
     padding: 0 15px;
-    margin-bottom: 35px;
+    margin-bottom: 60px;
 }
 
 .about-section .skills .skill-item p{
@@ -839,8 +850,12 @@ img{
 
 /*==============================      Services Section     ============================== */
 .service-section{
-    padding: 80px 0 80px;
+    padding: 20px 0 20px;
     min-height: 100vh;
+}
+
+.service-section .section-title {
+    margin-bottom: 30px;
 }
 
 .service-section .service-item{
@@ -852,7 +867,7 @@ img{
 }
 
 .service-section .service-item-inner{
-    padding: 50px 15px;
+    padding: 40px 15px;
     border-radius: 5px;
     text-align: center;
     width: 100%;
@@ -1392,7 +1407,7 @@ img{
 
 /*==============================      Contact Section     ============================== */
 .contact-section {
-    padding: 80px 0 80px;
+    padding: 40px 0 40px;
     min-height: 100vh;
 }
 
